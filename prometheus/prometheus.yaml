@@ -26,6 +26,7 @@ spec:
     kubeStateMetrics:
       image:
         repository: carlosedp/kube-state-metrics
+        tag: v1.3.0-arm
     nodeExporter:
       image:
         repository: carlosedp/node_exporter

@@ -18,7 +18,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: prometheus
+  name: prometheus-data
   namespace: monitoring
 spec:
   volumeName: prometheus-data
