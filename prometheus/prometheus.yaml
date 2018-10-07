@@ -1,0 +1,48 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: prometheus
+  namespace:  monitoring
+spec:
+  chartGitPath: prometheus
+  releaseName: prometheus
+  values:
+    rbac:
+      create: true
+    alertmanager:
+      image:
+        repository: carlosedp/alertmanager
+      persistentVolume:
+        enabled: true
+        existingClaim: prometheus-alertmanager
+    configmapReload:
+      image:
+        repository: carlosedp/configmap-reload
+    initChownData:
+      enabled: false
+      image:
+        repository: hypriot/armhf-busybox
+    kubeStateMetrics:
+      image:
+        repository: carlosedp/kube-state-metrics
+    nodeExporter:
+      image:
+        repository: carlosedp/node_exporter
+      tolerations:
+        - operator: "Exists"
+          effect: "NoSchedule"
+    server:
+      image:
+        repository: carlosedp/prometheus
+      ingress:
+        enabled: true
+          hosts:
+            - prometheus.mansm.io
+      persistentVolume:
+        enabled: true
+        existingClaim: prometheus-data
+    pushgateway:
+      image:
+        repository: carlosedp/pushgateway
+
