@@ -37,8 +37,8 @@ spec:
         repository: carlosedp/prometheus
       ingress:
         enabled: true
-          hosts:
-            - prometheus.mansm.io
+        hosts:
+          - prometheus.mansm.io
       persistentVolume:
         enabled: true
         existingClaim: prometheus-data
