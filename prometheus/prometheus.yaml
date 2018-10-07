@@ -20,7 +20,7 @@ spec:
       image:
         repository: carlosedp/configmap-reload
     initChownData:
-      enabled: false
+      enabled: true
       image:
         repository: hypriot/armhf-busybox
     kubeStateMetrics:
