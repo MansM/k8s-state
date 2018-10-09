@@ -1,0 +1,33 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: mediasync-night
+  namespace: mediasync
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: mediasync
+            image: arm32v7/ubuntu:18.10
+            args:
+              - /bin/bash
+              - -c 
+              - sleep 290
+            volumeMounts:
+              - mountPath: "/var/data/"
+                name: mediasync-data
+              - mountPath: /etc/mediasync-settings.yaml
+                name: mediasync-config
+                subPath: settings.yaml
+          restartPolicy: OnFailure
+          volumes:
+            - name: mediasync-data
+              persistentVolumeClaim:
+                claimName: mediasync-data
+            - name: mediasync-config
+              secret:
+                secretName: mediasync-config
+                #defaultMode: 256
