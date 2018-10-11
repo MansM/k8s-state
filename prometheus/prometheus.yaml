@@ -30,6 +30,13 @@ spec:
     nodeExporter:
       image:
         repository: carlosedp/node_exporter
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 30Mi
+        requests:
+          cpu: 50m
+          memory: 20Mi
       tolerations:
         - operator: "Exists"
           effect: "NoSchedule"
@@ -39,7 +46,7 @@ spec:
       resources:
         limits:
           cpu: 2000m
-          memory: 300Mi
+          memory: 500Mi
         requests:
           cpu: 500m
           memory: 300Mi
