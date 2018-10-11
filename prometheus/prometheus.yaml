@@ -43,13 +43,13 @@ spec:
     server:
       image:
         repository: carlosedp/prometheus
-      resources:
-        limits:
-          cpu: 2000m
-          memory: 500Mi
-        requests:
-          cpu: 500m
-          memory: 300Mi
+      # resources:
+      #   limits:
+      #     cpu: 2000m
+      #     memory: 500Mi
+      #   requests:
+      #     cpu: 500m
+      #     memory: 300Mi
       ingress:
         enabled: true
         hosts:

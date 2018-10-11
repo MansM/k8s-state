@@ -43,6 +43,13 @@ spec:
 
       containers:
       - name: flux
+        resources:
+          limits:
+            cpu: 500m
+            memory: 50Mi
+          requests:
+            cpu: 50m
+            memory: 20Mi
         # There are no ":latest" images for flux. Find the most recent
         # release or image version at https://quay.io/weaveworks/flux
         # and replace the tag here.
