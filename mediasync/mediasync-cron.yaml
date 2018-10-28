@@ -12,10 +12,10 @@ spec:
           containers:
           - name: mediasync
             image: mansm/mediasync
-            args:
-              - /bin/bash
-              - -c 
-              - sleep 290
+            # args:
+            #   - /bin/bash
+            #   - -c 
+            #   - sleep 290
             env:
               - name: MEDIASYNC_CONF
                 value: "/etc/mediasync-settings.yaml"
