@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
           - name: mediasync
-            image: arm32v7/ubuntu:18.10
+            image: mansm/mediasync
             args:
               - /bin/bash
               - -c 
