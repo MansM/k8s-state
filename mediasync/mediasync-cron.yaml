@@ -4,7 +4,7 @@ metadata:
   name: mediasync-night
   namespace: mediasync
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "5 3 * * *"
   jobTemplate:
     spec:
       template:
