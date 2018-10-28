@@ -16,6 +16,11 @@ spec:
               - /bin/bash
               - -c 
               - sleep 290
+            env:
+              - name: MEDIASYNC_CONF
+                value: "/etc/mediasync-settings.yaml"
+              - name: MEDIASYNC_DBLOC
+                value: "/var/data/media.db"
             volumeMounts:
               - mountPath: "/var/data/"
                 name: mediasync-data
