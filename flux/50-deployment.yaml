@@ -45,8 +45,8 @@ spec:
       - name: flux
         resources:
           limits:
-            cpu: 500m
-            memory: 50Mi
+            cpu: 1000m
+            memory: 125Mi
           requests:
             cpu: 50m
             memory: 20Mi
@@ -74,8 +74,8 @@ spec:
         # if you deployed memcached in a different namespace to flux,
         # or with a different service name, you can supply these
         # following two arguments to tell fluxd how to connect to it.
-        # - --memcached-hostname=memcached.default.svc.cluster.local
-        # - --memcached-service=memcached
+        - --memcached-hostname=memcached.flux.svc.cluster.local
+        - --memcached-service=memcached
 
         # this must be supplied, and be in the tmpfs (emptyDir)
         # mounted above, for K8s >= 1.10
