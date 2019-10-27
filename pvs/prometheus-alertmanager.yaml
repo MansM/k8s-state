@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   iscsi:
     iqn: iqn.2000-01.com.synology:DiskStation.Target-1.u
-    targetPortal: 10.0.1.2
+    targetPortal: 10.0.2.4
     lun: 2
 
 ---
